@@ -1,8 +1,13 @@
 package com.metropolitan.sistemzarezervacijukarata;
 
+import android.app.ProgressDialog;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,9 +17,30 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.ListAdapter;
+import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.lang.reflect.Array;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private GridView gridView;
+    private ArrayList<Bitmap> bitmapList;
+    private ProgressDialog dialog;
+    List<Film> listaFilmova;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +66,37 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        this.gridView = (GridView)findViewById(R.id.gridView);
+        listaFilmova = new ArrayList<>();
+        /*listaFilmova.add(new Film("Test film 1", "https://img.cineplexx.at/media/rs/inc/movies_licences/223_8.png"));
+        listaFilmova.add(new Film("Test film 2", "https://img.cineplexx.at/media/rs/inc/movies_licences/223_8.png"));
+        listaFilmova.add(new Film("Deadpool 2", "https://img.cineplexx.at/media/rs/inc/movies_licences/223_8.png"));
+        listaFilmova.add(new Film("Test film 4", "https://img.cineplexx.at/media/rs/inc/movies_licences/223_8.png"));
+        listaFilmova.add(new Film("Test film 5", "https://img.cineplexx.at/media/rs/inc/movies_licences/223_8.png"));
+        listaFilmova.add(new Film("Test film 1", "https://img.cineplexx.at/media/rs/inc/movies_licences/223_8.png"));
+        listaFilmova.add(new Film("Test film 2", "https://img.cineplexx.at/media/rs/inc/movies_licences/223_8.png"));
+        listaFilmova.add(new Film("Deadpool 2", "https://img.cineplexx.at/media/rs/inc/movies_licences/223_8.png"));
+        listaFilmova.add(new Film("Test film 4", "https://img.cineplexx.at/media/rs/inc/movies_licences/223_8.png"));
+        listaFilmova.add(new Film("Test film 5", "https://img.cineplexx.at/media/rs/inc/movies_licences/223_8.png"));*/
+
+        try {
+            new UcitajFilmove().executeOnExecutor(AsyncTask.SERIAL_EXECUTOR).get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+
+        FilmAdapter filmAdapter = new FilmAdapter(this, listaFilmova);
+        gridView.setAdapter(filmAdapter);
+
+        for(Film f : listaFilmova) {
+            Log.i("FILM: ",f.toString());
+            //f.ucitajSliku(filmAdapter);
+        }
+
     }
 
     @Override
@@ -97,5 +154,71 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+
+    private class UcitajFilmove extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            Toast.makeText(getBaseContext(), "Preuzimanje JSON podataka", Toast.LENGTH_LONG).show();
+        }
+
+        @Override
+        protected Void doInBackground(Void... args) {
+            HttpHandler sh = new HttpHandler();
+            String url = "https://my-json-server.typicode.com/darko94/cs330-dz10/db/";
+            String jsonStr = sh.makeServiceCall(url);
+
+            Log.e("ODGOVOR sa URL-a", "Odgovor sa url-a: " + jsonStr);
+
+            if(jsonStr != null) {
+                try {
+                    JSONObject jsonObj = new JSONObject(jsonStr);
+                    JSONArray filmovi = jsonObj.getJSONArray("filmovi");
+
+                    for (int i = 0; i < filmovi.length(); i++) {
+                        JSONObject jsonObject = filmovi.getJSONObject(i);
+                        String naslov= jsonObject.getString("naslov");
+                        String slikaUrl = jsonObject.getString("slikaUrl");
+
+
+                        Film film = new Film(naslov, slikaUrl);
+
+                        film.setSlika(urlImageToBitmap(film.getSlikaUrl()));
+
+                        listaFilmova.add(film);
+                    }
+                } catch (final JSONException e) {
+                    Log.e("ODGOVOR sa URL-a", "Greska u parsiranju JSON-a: " + e.getMessage());
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(), "Greska u parsiranju JSON-a: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    });
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else {
+                Log.e("ODGOVOR sa URL-a", "Nije moguce preuzeti JSON.");
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(), "Nije moguce preuzeti JSON. Proverite Logcat za vise detalja o gresci.", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+            return null;
+        }
+        private Bitmap urlImageToBitmap(String imageUrl) throws Exception {
+            Bitmap result = null;
+            URL url = new URL(imageUrl);
+            if(url != null) {
+                result = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+            }
+            return result;
+        }
+
     }
 }
