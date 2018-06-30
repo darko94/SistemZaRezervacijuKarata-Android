@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.net.URL;
 import java.util.Date;
 
-public class Film {
+public class FilmBezSlike implements Serializable {
     private int id;
     private String drzava;
     private int duzinaTrajanja;
@@ -22,17 +22,30 @@ public class Film {
     private String zanr;
     private String slikaUrl;
 
-    private Bitmap slika;
-
     private FilmAdapter filmAdapter;
 
-    public Film() {
+    public FilmBezSlike() {
     }
 
-    public Film(String naslov, String slikaUrl) {
+    public FilmBezSlike(Film film) {
+        this.id = film.getId();
+        this.drzava = film.getDrzava();
+        this.duzinaTrajanja = film.getDuzinaTrajanja();
+        this.godina = film.getGodina();
+        this.naslov = film.getNaslov();
+        this.opis = film.getOpis();
+        this.originalniNaslov = film.getOriginalniNaslov();
+        this.pocetakPrikazivanja = film.getPocetakPrikazivanja();
+        this.youtubeUrl = film.getYoutubeUrl();
+        this.zanr = film.getZanr();
+        this.slikaUrl = film.getSlikaUrl();
+    }
+
+
+
+    public FilmBezSlike(String naslov, String slikaUrl) {
         this.naslov = naslov;
         this.slikaUrl = slikaUrl;
-        this.slika = null;
     }
 
     public String getNaslov() {
@@ -49,14 +62,6 @@ public class Film {
 
     public void setSlikaUrl(String slikaUrl) {
         this.slikaUrl = slikaUrl;
-    }
-
-    public Bitmap getSlika() {
-        return slika;
-    }
-
-    public void setSlika(Bitmap slika) {
-        this.slika = slika;
     }
 
     public FilmAdapter getAdapter() {
@@ -149,7 +154,6 @@ public class Film {
                 ", youtubeUrl='" + youtubeUrl + '\'' +
                 ", zanr='" + zanr + '\'' +
                 ", slikaUrl='" + slikaUrl + '\'' +
-                ", slika=" + slika +
                 '}';
     }
 
@@ -198,7 +202,6 @@ public class Film {
         protected void onPostExecute(Bitmap ret) {
             if(ret != null) {
                 Log.i("ImageLoadTask", "Successfully loaded " + naslov + " image");
-                slika = ret;
                 if(filmAdapter != null) {
                     filmAdapter.notifyDataSetChanged();
                 }

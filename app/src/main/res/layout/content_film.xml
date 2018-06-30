@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pozadina5">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:actionBarSize"
+
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/film_naslov"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:textColor="#FFF"
+            android:textSize="20dp" />
+
+        <WebView
+            android:id="@+id/youtube_video"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#80000000"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Originalni naslov:"
+                android:textColor="#FFF" />
+
+            <TextView
+                android:id="@+id/film_originalni_naslov"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:textColor="#FFF" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#80000000"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Pocetak prikazivanja:"
+                android:textColor="#FFF" />
+
+            <TextView
+                android:id="@+id/film_pocetak_prikazivanja"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:textColor="#FFF" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#80000000"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Trajanje (min):"
+                android:textColor="#FFF" />
+
+            <TextView
+                android:id="@+id/film_duzina_trajanja"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:textColor="#FFF" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#80000000"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Drzava/Godina:"
+                android:textColor="#FFF" />
+
+            <TextView
+                android:id="@+id/film_drzava_godina"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:textColor="#FFF" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#80000000"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Zanr:"
+                android:textColor="#FFF" />
+
+            <TextView
+                android:id="@+id/film_zanr"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:textColor="#FFF" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#80000000"
+            android:text="Opis:"
+            android:textColor="#FFF" />
+
+        <TextView
+            android:id="@+id/film_opis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#80000000"
+            android:textColor="#FFF" />
+
+        <!--<TextView-->
+            <!--android:id="@+id/film_opis2"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:background="#80000000"-->
+            <!--android:text="asdfasdfklasdfioashdsjklfhasdlfhasdflaskjfhsalkfjhasdfasdjklfhsdafhasdhfsadlkfhlasdfhsadhfsadjhsdahfsadhjfsadhlfhsadfhsdahj ajksdhfklajhsdfkasjdhfkjlasdhfkjasdhfsadk f alkdshfaskldjfhasdkjfhsdajfh asdfasdfklasdfioashdsjklfhasdlfhasdflaskjfhsalkfjhasdfasdjklfhsdafhasdhfsadlkfhlasdfhsadhfsadjhsdahfsadhjfsadhlfhsadfhsdahj ajksdhfklajhsdfkasjdhfkjlasdhfkjasdhfsadk f alkdshfaskldjfhasdkjfhsdajfh DARKO"-->
+            <!--android:textColor="#FFF" />-->
+
+    </LinearLayout>
+</ScrollView>
