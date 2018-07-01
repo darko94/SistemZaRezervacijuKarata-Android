@@ -191,7 +191,7 @@ public class RezervacijaActivity  extends AppCompatActivity implements Navigatio
         @Override
         protected Void doInBackground(String... args) {
             try {
-                URL url = new URL("http://192.168.18.143:8080/SistemZaRezervacijuKarata-CS230/rest/sistemzarezervacijukarata.cs230.entities.rezervacija");
+                URL url = new URL("http://192.168.18.143:8080/SistemZaRezervacijuKarata-Server/rest/sistemzarezervacijukarata.cs230.entities.rezervacija");
                 HttpURLConnection conn = (HttpURLConnection)url.openConnection();
                 conn.setRequestMethod("POST");
                 conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");

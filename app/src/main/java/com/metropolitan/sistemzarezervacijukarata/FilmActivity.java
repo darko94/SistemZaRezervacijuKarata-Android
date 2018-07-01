@@ -275,7 +275,7 @@ public class FilmActivity extends AppCompatActivity implements NavigationView.On
         String strDefinition = "";
         try {
             in = OpenHttpConnection(
-                    "http://192.168.18.143:8080/SistemZaRezervacijuKarata-CS230/rest/filmovi/projekcijeZaFilm/" + film.getId());
+                    "http://192.168.18.143:8080/SistemZaRezervacijuKarata-Server/rest/filmovi/projekcijeZaFilm/" + film.getId());
             Document doc = null;
             DocumentBuilderFactory dbf =
                     DocumentBuilderFactory.newInstance();

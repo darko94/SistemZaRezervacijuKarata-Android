@@ -11,16 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8725b2dc-e8d2-4a3e-a376-03a4af22406f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/FilmActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/FilmActivity.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/MainActivity.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/RezervacijaActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/RezervacijaActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_film.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_film.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_rezervacija.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_rezervacija.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/main.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,8 +32,8 @@
       <file leaf-file-name="RezervacijaActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/RezervacijaActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="239" column="0" lean-forward="false" selection-start-line="239" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
+            <state relative-caret-position="175">
+              <caret line="193" column="45" lean-forward="false" selection-start-line="193" selection-start-column="42" selection-end-line="193" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,8 +44,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
+            <state relative-caret-position="192">
+              <caret line="205" column="0" lean-forward="false" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
               <folding>
                 <element signature="e#2463#2750#0" expanded="true" />
                 <element signature="e#2749#2750#0" expanded="true" />
@@ -163,8 +156,8 @@
       <file leaf-file-name="FilmActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/FilmActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="187" column="0" lean-forward="false" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+            <state relative-caret-position="175">
+              <caret line="277" column="31" lean-forward="false" selection-start-line="277" selection-start-column="28" selection-end-line="277" selection-end-column="31" />
               <folding>
                 <element signature="e#2683#2970#0" expanded="true" />
                 <element signature="e#2969#2970#0" expanded="true" />
@@ -213,12 +206,12 @@
       <find>intent</find>
       <find>film</find>
       <find>btnre</find>
-      <find>192</find>
       <find>oncli</find>
       <find>asyn</find>
       <find>snack</find>
-      <find>konta</find>
       <find>kont</find>
+      <find>konta</find>
+      <find>192</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2276,7 +2269,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -2550,7 +2543,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -3036,8 +3029,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/FilmActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="187" column="0" lean-forward="false" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+        <state relative-caret-position="175">
+          <caret line="277" column="31" lean-forward="false" selection-start-line="277" selection-start-column="28" selection-end-line="277" selection-end-column="31" />
           <folding>
             <element signature="e#2683#2970#0" expanded="true" />
             <element signature="e#2969#2970#0" expanded="true" />
@@ -3051,8 +3044,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
+        <state relative-caret-position="192">
+          <caret line="205" column="0" lean-forward="false" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
           <folding>
             <element signature="e#2463#2750#0" expanded="true" />
             <element signature="e#2749#2750#0" expanded="true" />
@@ -3066,8 +3059,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/RezervacijaActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="239" column="0" lean-forward="false" selection-start-line="239" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
+        <state relative-caret-position="175">
+          <caret line="193" column="45" lean-forward="false" selection-start-line="193" selection-start-column="42" selection-end-line="193" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

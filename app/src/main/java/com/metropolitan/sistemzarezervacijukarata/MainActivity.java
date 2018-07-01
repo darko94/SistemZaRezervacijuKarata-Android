@@ -202,7 +202,7 @@ public class MainActivity extends AppCompatActivity
         protected Void doInBackground(Void... args) {
             HttpHandler sh = new HttpHandler();
             //String url = "https://my-json-server.typicode.com/darko94/cs330-dz10/db/";
-            String url = "http://192.168.18.143:8080/SistemZaRezervacijuKarata-CS230/rest/filmovi/";
+            String url = "http://192.168.18.143:8080/SistemZaRezervacijuKarata-Server/rest/filmovi/";
 
 
             try {
@@ -303,7 +303,7 @@ public class MainActivity extends AppCompatActivity
         String strDefinition = "";
         try {
             in = OpenHttpConnection(
-                    "http://192.168.18.143:8080/SistemZaRezervacijuKarata-CS230/rest/filmovi/");
+                    "http://192.168.18.143:8080/SistemZaRezervacijuKarata-Server/rest/filmovi/");
             Document doc = null;
             DocumentBuilderFactory dbf =
                     DocumentBuilderFactory.newInstance();
