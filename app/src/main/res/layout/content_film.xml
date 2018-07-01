@@ -184,12 +184,12 @@
         </Spinner>
 
         <Button
-            android:id="@+id/btnRezervisi"
+            android:id="@+id/btnRezervacija"
             android:layout_marginLeft="75dp"
             android:layout_marginRight="75dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/rezervisi"
+            android:text="@string/rezervacija"
             android:textSize="20dp"
             android:textColor="#FFF"
             android:background="@drawable/button"

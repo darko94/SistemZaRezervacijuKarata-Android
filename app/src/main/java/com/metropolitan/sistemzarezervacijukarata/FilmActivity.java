@@ -1,6 +1,9 @@
 package com.metropolitan.sistemzarezervacijukarata;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -9,6 +12,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -56,9 +60,10 @@ public class FilmActivity extends AppCompatActivity implements NavigationView.On
     private TextView filmNaslov, filmOriginalniNaslov, filmPocetakPrikazivanja, filmDuzinaTrajanja, filmDrzavaGodina, filmZanr, filmOpis;
     private WebView youtubeVideo;
     private Spinner spinner;
-    Button btnRezervisi;
+    Button btnRezervacija;
     private FilmBezSlike film;
     private List<Projekcija> listaProjekcija;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,8 +76,8 @@ public class FilmActivity extends AppCompatActivity implements NavigationView.On
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                sendEmail("Pitanje", "");
             }
         });
 
@@ -86,24 +91,24 @@ public class FilmActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        filmNaslov = (TextView)findViewById(R.id.film_naslov);
-        filmOriginalniNaslov = (TextView)findViewById(R.id.film_originalni_naslov);
-        filmPocetakPrikazivanja = (TextView)findViewById(R.id.film_pocetak_prikazivanja);
-        filmDuzinaTrajanja = (TextView)findViewById(R.id.film_duzina_trajanja);
-        filmDrzavaGodina = (TextView)findViewById(R.id.film_drzava_godina);
-        filmZanr = (TextView)findViewById(R.id.film_zanr);
-        filmOpis = (TextView)findViewById(R.id.film_opis);
-        youtubeVideo = (WebView)findViewById(R.id.youtube_video);
-        spinner = (Spinner)findViewById(R.id.lista_projekcija);
-        btnRezervisi = (Button)findViewById(R.id.btnRezervisi);
+        filmNaslov = (TextView) findViewById(R.id.film_naslov);
+        filmOriginalniNaslov = (TextView) findViewById(R.id.film_originalni_naslov);
+        filmPocetakPrikazivanja = (TextView) findViewById(R.id.film_pocetak_prikazivanja);
+        filmDuzinaTrajanja = (TextView) findViewById(R.id.film_duzina_trajanja);
+        filmDrzavaGodina = (TextView) findViewById(R.id.film_drzava_godina);
+        filmZanr = (TextView) findViewById(R.id.film_zanr);
+        filmOpis = (TextView) findViewById(R.id.film_opis);
+        youtubeVideo = (WebView) findViewById(R.id.youtube_video);
+        spinner = (Spinner) findViewById(R.id.lista_projekcija);
+        btnRezervacija = (Button) findViewById(R.id.btnRezervacija);
 
         Intent i = getIntent();
-        film = (FilmBezSlike)i.getSerializableExtra("film");
+        film = (FilmBezSlike) i.getSerializableExtra("film");
         filmNaslov.setText(film.getNaslov());
         filmOriginalniNaslov.setText(film.getOriginalniNaslov());
         DateFormat df = new SimpleDateFormat("dd.MM.yyyy.");
         filmPocetakPrikazivanja.setText(df.format(film.getPocetakPrikazivanja()));
-        filmDuzinaTrajanja.setText(film.getDuzinaTrajanja()+"");
+        filmDuzinaTrajanja.setText(film.getDuzinaTrajanja() + "");
         filmDrzavaGodina.setText(film.getDrzava() + "/" + film.getGodina());
         filmZanr.setText(film.getZanr());
         filmOpis.setText(film.getOpis());
@@ -131,11 +136,11 @@ public class FilmActivity extends AppCompatActivity implements NavigationView.On
         spinner.setAdapter(adapter);
 
 
-        btnRezervisi.setOnClickListener(new View.OnClickListener() {
+        btnRezervacija.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Projekcija odabranaProjekcija = (Projekcija)spinner.getSelectedItem();
-                if(odabranaProjekcija.toString().equals("Odaberite projekciju...")) {
+                Projekcija odabranaProjekcija = (Projekcija) spinner.getSelectedItem();
+                if (odabranaProjekcija.toString().equals("Odaberite projekciju...")) {
                     Toast.makeText(getApplicationContext(), "Morate odabrati projekciju!", Toast.LENGTH_SHORT).show();
                 } else {
                     Intent i = new Intent(getApplicationContext(), RezervacijaActivity.class);
@@ -148,14 +153,12 @@ public class FilmActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-
     private class Callback extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             return false;
         }
     }
-
 
 
     @Override
@@ -183,11 +186,6 @@ public class FilmActivity extends AppCompatActivity implements NavigationView.On
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -197,20 +195,22 @@ public class FilmActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.pocetna) {
             youtubeVideo.loadUrl("about:blank");
             Intent i = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(i);
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.kontakt) {
+            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "+381612098137"));
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, new String[] {
+                                Manifest.permission.CALL_PHONE},
+                        1);
+            }
+            startActivity(intent);
+        } else if (id == R.id.lokacija) {
+            Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+                    Uri.parse("https://www.google.com/maps/place/Univerzitet+Metropolitan/@43.3069794,21.9451897,549m/data=!3m1!1e3!4m5!3m4!1s0x4755b06571362991:0x25d6cceab952b797!8m2!3d43.3070305!4d21.9472396"));
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -336,5 +336,16 @@ public class FilmActivity extends AppCompatActivity implements NavigationView.On
         }
         //---vraćanje definicije reči---
         return strDefinition;
+    }
+    //---slanje e-mail poruke na drugi uredjaj---
+    private void sendEmail(String subject, String message) {
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.setData(Uri.parse("mailto:"));
+        String[] to = {"darko.misic.2305@metropolitan.ac.rs"};
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, to);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        emailIntent.putExtra(Intent.EXTRA_TEXT, message);
+        emailIntent.setType("message/rfc822");
+        startActivity(Intent.createChooser(emailIntent, "Email"));
     }
 }

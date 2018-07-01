@@ -1,12 +1,13 @@
 <resources>
-    <string name="app_name">SistemZaRezervacijuKarata</string>
+    <string name="app_name">Sistem za rezervaciju karata</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Sistem za rezervaciju karata</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_subtitle">darko.misic.2305@metropolitan.ac.rs</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="rezervisi">REZERVIŠI</string>
+    <string name="rezervisi">REZERVIŠI KARTE</string>
+    <string name="rezervacija">REZERVACIJA</string>
     <string name="originalniNaslov">Originalni naslov:</string>
     <string name="dostupneProjekcije">Dostupne projekcije:</string>
     <string name="pocetakPrikazivanja">Početak prikazivanja:</string>
@@ -15,4 +16,10 @@
     <string name="zanr">Žanr:</string>
     <string name="opis">Opis:</string>
     <string name="datumProjekcije">Datum projekcije:</string>
+    <string name="vremeProjekcije">Vreme projekcije:</string>
+    <string name="sala">Sala:</string>
+    <string name="tehnologija">Tehnologija:</string>
+    <string name="molimoUnesitePodatke">Molimo unesite e-mail adresu i broj karata:</string>
+    <string name="email">E-mail:</string>
+    <string name="brojKarata">Broj karata:</string>
 </resources>
