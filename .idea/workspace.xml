@@ -11,9 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8725b2dc-e8d2-4a3e-a376-03a4af22406f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/FilmActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/FilmActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/MainActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/RezervacijaActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/RezervacijaActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/gridview_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/gridview_layout.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,7 +27,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RezervacijaActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RezervacijaActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/RezervacijaActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="175">
@@ -37,6 +35,19 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gridview_layout.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/gridview_layout.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -138,16 +149,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="6" column="67" lean-forward="false" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ic_menu_camera.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_camera.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -2238,7 +2239,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/HttpHandler.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/gridview_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/app_bar_film.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/film_activity.xml" />
@@ -2266,6 +2266,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/FilmActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/metropolitan/sistemzarezervacijukarata/RezervacijaActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/gridview_layout.xml" />
       </list>
     </option>
   </component>
@@ -2687,17 +2688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/gridview_layout.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/simple_spinner_item.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3064,6 +3054,17 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/gridview_layout.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
