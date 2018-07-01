@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".FilmActivity" android:label="Detalji o filmu" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name=".RezervacijaActivity" android:label="Rezervacija" android:theme="@style/Theme.AppCompat.NoActionBar"/>
     </application>
 
 </manifest>

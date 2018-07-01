@@ -39,7 +39,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:text="Originalni naslov:"
+                android:text="@string/originalniNaslov"
                 android:textColor="#FFF" />
 
             <TextView
@@ -62,7 +62,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:text="Pocetak prikazivanja:"
+                android:text="@string/pocetakPrikazivanja"
                 android:textColor="#FFF" />
 
             <TextView
@@ -85,7 +85,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:text="Trajanje (min):"
+                android:text="@string/trajanje"
                 android:textColor="#FFF" />
 
             <TextView
@@ -108,7 +108,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:text="Drzava/Godina:"
+                android:text="@string/drzavaGodina"
                 android:textColor="#FFF" />
 
             <TextView
@@ -131,7 +131,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
-                android:text="Zanr:"
+                android:text="@string/zanr"
                 android:textColor="#FFF" />
 
             <TextView
@@ -148,7 +148,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:background="#80000000"
-            android:text="Opis:"
+            android:text="@string/opis"
             android:textColor="#FFF" />
 
         <TextView
@@ -160,15 +160,43 @@
             android:background="#80000000"
             android:textColor="#FFF" />
 
-        <!--<TextView-->
-            <!--android:id="@+id/film_opis2"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginLeft="10dp"-->
-            <!--android:layout_marginRight="10dp"-->
-            <!--android:background="#80000000"-->
-            <!--android:text="asdfasdfklasdfioashdsjklfhasdlfhasdflaskjfhsalkfjhasdfasdjklfhsdafhasdhfsadlkfhlasdfhsadhfsadjhsdahfsadhjfsadhlfhsadfhsdahj ajksdhfklajhsdfkasjdhfkjlasdhfkjasdhfsadk f alkdshfaskldjfhasdkjfhsdajfh asdfasdfklasdfioashdsjklfhasdlfhasdflaskjfhsalkfjhasdfasdjklfhsdafhasdhfsadlkfhlasdfhsadhfsadjhsdahfsadhjfsadhlfhsadfhsdahj ajksdhfklajhsdfkasjdhfkjlasdhfkjasdhfsadk f alkdshfaskldjfhasdkjfhsdajfh DARKO"-->
-            <!--android:textColor="#FFF" />-->
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:textColor="#FFF"
+            android:textSize="20dp"
+            android:text="@string/dostupneProjekcije"/>
+
+        <Spinner
+            android:background="#80000000"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/lista_projekcija"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+        </Spinner>
+
+        <Button
+            android:id="@+id/btnRezervisi"
+            android:layout_marginLeft="75dp"
+            android:layout_marginRight="75dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rezervisi"
+            android:textSize="20dp"
+            android:textColor="#FFF"
+            android:background="@drawable/button"
+
+            android:layout_marginBottom="100dp"/>
+
+        <!--android:background="#c00d548b"-->
 
     </LinearLayout>
 </ScrollView>

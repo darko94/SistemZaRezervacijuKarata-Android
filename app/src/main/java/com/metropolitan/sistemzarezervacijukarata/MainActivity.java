@@ -192,7 +192,7 @@ public class MainActivity extends AppCompatActivity
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            Toast.makeText(getBaseContext(), "Preuzimanje JSON podataka", Toast.LENGTH_LONG).show();
+            //Toast.makeText(getBaseContext(), "Preuzimanje JSON podataka", Toast.LENGTH_LONG).show();
         }
 
         @Override
@@ -251,14 +251,6 @@ public class MainActivity extends AppCompatActivity
 //                });
 //            }
             return null;
-        }
-        private Bitmap urlImageToBitmap(String imageUrl) throws Exception {
-            Bitmap result = null;
-            URL url = new URL(imageUrl);
-            if(url != null) {
-                result = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-            }
-            return result;
         }
 
     }
@@ -334,11 +326,8 @@ public class MainActivity extends AppCompatActivity
                 Node itemNode = definitionElements.item(i);
                 if (itemNode.getNodeType() == Node.ELEMENT_NODE)
                 {
-
                     //---konverzija Definition čvora u Element---
                     Element definitionElement = (Element) itemNode;
-
-
 
                     String naslov = definitionElement.getElementsByTagName("naslov").item(0).getChildNodes().item(0).getNodeValue();
                     String originalniNaslov = definitionElement.getElementsByTagName("originalniNaslov").item(0).getChildNodes().item(0).getNodeValue();
@@ -370,8 +359,7 @@ public class MainActivity extends AppCompatActivity
 
                     film.setSlika(urlImageToBitmap(film.getSlikaUrl()));
 
-                    Log.i("FILM", film.toString());
-                    Log.i("ORIGINALNI NASLOV", originalniNaslov);
+                    /*
                     //---preuzimanje svih <WordDefinition> elemenata iz
                     // <Definition> elementa---
                     NodeList wordDefinitionElements =
@@ -392,6 +380,7 @@ public class MainActivity extends AppCompatActivity
                         strDefinition +=
                                 ((Node) textNodes.item(0)).getNodeValue() + ". \n";
                     }
+                    */
                 }
             }
         } catch (IOException e1) {

@@ -6,4 +6,13 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="rezervisi">REZERVIŠI</string>
+    <string name="originalniNaslov">Originalni naslov:</string>
+    <string name="dostupneProjekcije">Dostupne projekcije:</string>
+    <string name="pocetakPrikazivanja">Početak prikazivanja:</string>
+    <string name="trajanje">Trajanje (min):</string>
+    <string name="drzavaGodina">Država/Godina:</string>
+    <string name="zanr">Žanr:</string>
+    <string name="opis">Opis:</string>
+    <string name="datumProjekcije">Datum projekcije:</string>
 </resources>
